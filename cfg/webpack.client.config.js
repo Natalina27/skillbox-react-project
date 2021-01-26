@@ -16,7 +16,7 @@ module.exports = {
     mode: NODE_ENV ? NODE_ENV : 'development',
     entry: path.resolve(__dirname, '../src/client/index.jsx'),
     output: {
-        path: path.resolve(__dirname, '../dist/client.js'),
+        path: path.resolve(__dirname, '../dist/client'),
         filename: 'client.js'
     },
     module: {
