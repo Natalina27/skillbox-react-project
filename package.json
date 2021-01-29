@@ -21,6 +21,7 @@
   "homepage": "https://github.com/Natalina27/skillbox-react-project#readme",
   "dependencies": {
     "express": "^4.17.1",
+    "glob-to-regexp": "^0.4.1",
     "nodemon": "^2.0.7",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
@@ -32,8 +33,8 @@
     "ts-loader": "^8.0.14",
     "typescript": "^4.1.3",
     "webpack": "^4.44.2",
-    "webpack-cli": "^4.4.0",
-    "webpack-dev-server": "^3.11.2",
+    "webpack-cli": "^4.3.1",
+    "webpack-dev-server": "^3.11.1",
     "webpack-node-externals": "^2.5.2"
   }
 }
