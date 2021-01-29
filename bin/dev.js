@@ -17,7 +17,7 @@ hmrServer.use(webpackDevMiddleware(clientCompiler, {
         ignore: /dist/,
     },
     writeToDisk: true,
-    stats: 'error-only',
+    stats: 'errors-only',
 }));
 
 hmrServer.use(webpackHotMiddleware(clientCompiler, {
