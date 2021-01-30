@@ -1,8 +1,10 @@
 import  React, {useState} from 'react';
 import { hot } from 'react-hot-loader/root';
 
-function HeaderComponent(){
+const HeaderComponent = () => {
+
     const [state, setState] = useState(false);
+
     return (
         <header>
             <h1>HMR - Hot Module Replacement Example</h1>
