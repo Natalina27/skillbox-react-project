@@ -1,5 +1,8 @@
+//Core
 import  React from 'react';
 import ReactDom from 'react-dom';
+
+//Components
 import {Header} from '../shared/Header/Header';
 
 window.addEventListener('load', () => {
