@@ -1,14 +1,16 @@
+//Core
 import * as  React from 'react';
 import { hot } from 'react-hot-loader/root';
-import {useState} from "react";
-
+import {useState} from 'react';
+//Styles
+import Styles from './Header.module.css';
 const HeaderComponent = () => {
 
     const [state, setState] = useState(false);
 
     return (
         <header>
-            <h1>HMR - Hot Module Replacement Example</h1>
+            <h1 className={Styles.example}>HMR - Hot Module Replacement Example</h1>
             <button onClick={() => setState(!state)}>
                 {state ? 'hide' : 'show'}
             </button>
