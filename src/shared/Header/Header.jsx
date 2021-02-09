@@ -16,9 +16,9 @@ const HeaderComponent = () => {
             <button onClick={() => setState(!state)}>
                 {state ? 'hide' : 'show'}
             </button>
-            {state && <h3> Here I'm here 123</h3>}
+            {state && <h3> Here I'm here 123 !</h3>}
             <p>
-                It replace code without page reloading 123
+                It replace code without page reloading 123 !
             </p>
             <b>I edit code now</b>
         </header>
