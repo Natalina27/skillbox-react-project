@@ -4,7 +4,7 @@ import { hot } from 'react-hot-loader/root';
 import {useState} from 'react';
 
 //Styles
-import Styles from './Header.module.css';
+import Styles from './Header.css';
 const HeaderComponent = () => {
 
     const [state, setState] = useState(false);
