@@ -42,8 +42,8 @@ function withType<U>(arg: U): IValueWithType<U>{
 const result2 = withType(123);
 
 // Built-in generics
-//1. omit
 
+//1. omit
 interface IExample<T> {
     type: string;
     value: T;
@@ -55,3 +55,10 @@ const omittedObject: Omit < IExample <string>, 'isEmpty' | 'value'> = {
 };
 
 //2.picked:
+const picked: Pick<IExample<number>, 'isEmpty' | 'value'> = {
+    isEmpty: true,
+    value: 123
+}
+
+//3.partial
+
