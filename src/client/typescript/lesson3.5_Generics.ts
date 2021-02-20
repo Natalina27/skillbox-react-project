@@ -61,4 +61,6 @@ const picked: Pick<IExample<number>, 'isEmpty' | 'value'> = {
 }
 
 //3.partial
+const partial: Partial<IExample<object>> = {
 
+}
