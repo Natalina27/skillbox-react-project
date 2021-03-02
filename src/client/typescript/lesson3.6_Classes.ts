@@ -33,3 +33,36 @@ class Constructor{
 }
 
 const instance = new Constructor(123);
+
+class Child extends Constructor{
+    public chilfMethod(){
+    }
+
+    public  protectedMethod(): number {
+        return super.protectedMethod();
+    }
+
+    public publicMethod(): number {
+        return super.publicMethod();
+    }
+};
+
+// no - new! yes- extends!
+abstract class AbstractClass{
+    public abstract abstractField: number;
+
+    public abstract abstractMethod(): number;
+
+    protected protectedMethod(){
+        return this.abstractField;
+    }
+};
+
+class NewChild extends AbstractClass{
+    public abstractField: number = 123 ;
+
+    public abstractMethod(): number {
+        return 0;
+    }
+
+}
