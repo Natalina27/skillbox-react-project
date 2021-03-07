@@ -27,4 +27,16 @@ let bigObject = {
     "compair_same_ref": false
 };
 
+bigObject.compair_same_ref = true;
+
+type TMyBigObject = typeof bigObject;
+
+const typedBigObject: Readonly<TMyBigObject> = bigObject;
+
+//typedBigObject.compair_same_ref = false; - read only!
+
+typedBigObject.commit.id = '123'; // surfaced read only
+
+
+
 
