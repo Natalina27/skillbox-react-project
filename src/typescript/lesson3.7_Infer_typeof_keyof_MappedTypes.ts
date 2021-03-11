@@ -37,6 +37,18 @@ const typedBigObject: Readonly<TMyBigObject> = bigObject;
 
 typedBigObject.commit.id = '123'; // surfaced read only
 
+type TObjKeys = keyof TMyBigObject;
+type TCommitType = TMyBigObject['commit'];
 
+type MyReadOnly<T> = {
+    //mapped types - типы которые перебирают другие типы
+    readonly [N in keyof T]: T[N]
+}
+//for(let N of ['asd', 'qwe']){}
 
+/*
+const some: MyReadOnly<TMyBigObject> = {
+    compair_same_ref: true
+};
+*/
 
