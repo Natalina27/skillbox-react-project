@@ -23,17 +23,17 @@ let bigObject = {
     "diffs":[{
     "old_path": "files/js/application.js"
     }],
-    "compair_timeout": false,
-    "compair_same_ref": false
+    "compare_timeout": false,
+    "compare_same_ref": false
 };
 
-bigObject.compair_same_ref = true;
+bigObject.compare_same_ref = true;
 
 type TMyBigObject = typeof bigObject;
 
 const typedBigObject: Readonly<TMyBigObject> = bigObject;
 
-//typedBigObject.compair_same_ref = false; - read only!
+//typedBigObject.compare_same_ref = false; - read only!
 
 typedBigObject.commit.id = '123'; // surfaced read only
 
@@ -48,7 +48,24 @@ type MyReadOnly<T> = {
 
 /*
 const some: MyReadOnly<TMyBigObject> = {
-    compair_same_ref: true
+    compare_same_ref: true
 };
 */
 
+type MyPartial<T> = {
+    [N in keyof T] ?: T[N];
+}
+
+type MyPick<T, K extends keyof T> = {
+    [N in K] ?: T[N];
+}
+
+type picked = MyPick<TMyBigObject, 'commit'| 'commits'>;
+
+type MyReadonlyDeep<T> = {
+    readonly [N in keyof T]: T[N] extends object ? MyReadonlyDeep<T[N]> : T[N];
+}
+
+const typedBigObjectDeep: MyReadonlyDeep<TMyBigObject> = bigObject;
+//typedBigObjectDeep.compare_same_ref = false;
+//typedBigObjectDeep.commit.id = "123";
