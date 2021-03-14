@@ -69,3 +69,21 @@ type MyReadonlyDeep<T> = {
 const typedBigObjectDeep: MyReadonlyDeep<TMyBigObject> = bigObject;
 //typedBigObjectDeep.compare_same_ref = false;
 //typedBigObjectDeep.commit.id = "123";
+
+type TSomeType = MyReadonlyDeep<TMyBigObject>;
+
+//type inference
+
+type RemoveReadonly<T> = T extends MyReadonlyDeep<infer E> ? E : T;
+
+type TTest = RemoveReadonly<TSomeType>;
+
+function greaterThanZero(a: number, b: string){
+    return a > 0;
+}
+
+type FnReturnType<T> = T extends ((...args: any[]) => infer R) ? R : never;
+type FnParameters<T> = T extends ((...args: infer R) => infer R) ? R : never;
+
+type  TReturnType = FnReturnType<typeof greaterThanZero>;
+type  TArgsType = FnParameters<typeof greaterThanZero>;
